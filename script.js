@@ -21,20 +21,27 @@ function displayResult(){
 }
 
 const dataArray = [
-    {value: 1000, Symbol: "M"},
-    {value: 900, Symbol: "DM"},
-    {value: 500, Symbol: "D"},
-    {value: 400, Symbol: "CD"},
-    {value: 100, Symbol: "C"},
-    {value: 90, Symbol: "LC"},
-    {value: 50, Symbol: "L"},
-    {value: 40, Symbol: "XL"},
-    {value: 10, Symbol: "X"},
-    {value: 9, Symbol: "IX"},
-    {value: 5, Symbol: "V"},
-    {value: 4, Symbol: "IV"},
-    {value: 1, Symbol: "I"}
+    {value: 1000, symbol: "M"},
+    {value: 900, symbol: "DM"},
+    {value: 500, symbol: "D"},
+    {value: 400, symbol: "CD"},
+    {value: 100, symbol: "C"},
+    {value: 90, symbol: "LC"},
+    {value: 50, symbol: "L"},
+    {value: 40, symbol: "XL"},
+    {value: 10, symbol: "X"},
+    {value: 9, symbol: "IX"},
+    {value: 5, symbol: "V"},
+    {value: 4, symbol: "IV"},
+    {value: 1, symbol: "I"}
 ]
 function romanFigure(n){
-
+   result = ""
+   for (let i = 0; i < dataArray.length; i++){
+     while(n >= dataArray[i].value){
+        result += dataArray[i].symbol
+        n -= dataArray[i].value
+     }
+   }
+   return result
 }
